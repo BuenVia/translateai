@@ -2,6 +2,9 @@ import Body from './components/Body';
 import Header from './components/Header'
 
 function App() {
+
+  const year = new Date().getFullYear()
+
   return (
     <div className="App">
       <Header />
@@ -11,7 +14,7 @@ function App() {
       </div>
 
       <div className="footer">
-        Copyright MJ Clifford
+        Copyright MJ Clifford {year}
       </div>
 
     </div>
