@@ -41,33 +41,33 @@ const Body = () => {
 
     const callOpenAi = async () => {       
         // Logic for making the API call to the cloudfare helper.
-        try {
-            const messages = [
-                        {"role": "developer", "content": `You are a language translator. Translate the following text from English to ${userObj.language}`},
-                        {"role": "user", "content": userObj.userText}
-                    ]
-            const url = "https://openai-api-worker.mclifford1984.workers.dev"
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(messages)
-            })
-            const status = response.status
-            if (status === 200) {
-                const data = await response.json()
-                delete data.request_id
-                setResponseObj(data.content)
-            } else {
-                setResponseObj("There was a problem with the API call. Contact Matt.")
-            }
+        // try {
+        //     const messages = [
+        //                 {"role": "developer", "content": `You are a language translator. Translate the following text from English to ${userObj.language}`},
+        //                 {"role": "user", "content": userObj.userText}
+        //             ]
+        //     const url = "https://openai-api-worker.mclifford1984.workers.dev"
+        //     const response = await fetch(url, {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify(messages)
+        //     })
+        //     const status = response.status
+        //     if (status === 200) {
+        //         const data = await response.json()
+        //         delete data.request_id
+        //         setResponseObj(data.content)
+        //     } else {
+        //         setResponseObj("There was a problem with the API call. Contact Matt.")
+        //     }
             
-        } catch (error) {
-            setResponseObj("There was a problem with the API call. Contact Matt.")
+        // } catch (error) {
+        //     setResponseObj("There was a problem with the API call. Contact Matt.")
             
-        }
-        // setResponseObj("API is currently set to false to avoid token waste. Please contact author.")
+        // }
+        setResponseObj("API is currently set to false to avoid token waste. Please contact author.")
     }
 
     const reset = () => {
