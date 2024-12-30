@@ -14,7 +14,7 @@ function App() {
       </div>
 
       <div className="footer">
-        Copyright MJ Clifford {year}
+        Copyright MJ Clifford {year}.
       </div>
 
     </div>
