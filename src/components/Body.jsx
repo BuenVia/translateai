@@ -40,7 +40,7 @@ const Body = () => {
     }
 
     const callOpenAi = async () => {       
-        // Logic for making the API call to the cloudfare helper
+        // Logic for making the API call to the cloudfare helper.
         try {
             const messages = [
                         {"role": "developer", "content": `You are a language translator. Translate the following text from English to ${userObj.language}`},
